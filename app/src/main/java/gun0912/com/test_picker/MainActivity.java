@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 Config config = new Config();
                 config.setCameraHeight(R.dimen.app_camera_height);
                 config.setToolbarTitleRes(R.string.custom_title);
+                config.setSelectedTitleRes(R.string.custom_selected_title);
+                config.setNoImageRes(R.string.custom_no_image);
                 config.setSelectionMin(2);
                 config.setSelectionLimit(4);
                 config.setSelectedBottomHeight(R.dimen.bottom_height);

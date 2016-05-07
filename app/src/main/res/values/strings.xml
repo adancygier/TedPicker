@@ -6,4 +6,6 @@
     <string name="app_name">TedPickerDemo</string>
 
     <string name="custom_title">Custom Title</string>
+    <string name="custom_selected_title">Selected Images</string>
+    <string name="custom_no_image">No Images Selected</string>
 </resources>
