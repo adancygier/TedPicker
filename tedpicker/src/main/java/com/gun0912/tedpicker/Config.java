@@ -15,6 +15,8 @@ import android.support.annotation.StringRes;
 public class Config {
 
     private int toolbarTitleRes = R.string.toolbar_title;
+    private int selectedTitleRes = R.string.selected_image;
+    private int noImageRes = R.string.no_image;
 
     private int tabBackgroundColor;
     private int tabSelectionIndicatorColor;
@@ -90,6 +92,28 @@ public class Config {
             throw new IllegalArgumentException("Invalid value for toolbarTitleRes");
 
         this.toolbarTitleRes = toolbarTitleRes;
+    }
+
+    public int getSelectedTitleRes() {
+        return selectedTitleRes;
+    }
+
+    public void setSelectedTitleRes(@StringRes int selectedTitleRes) {
+        if (selectedTitleRes <= 0)
+            throw new IllegalArgumentException("Invalid value for selectedTitleRes");
+
+        this.selectedTitleRes = selectedTitleRes;
+    }
+
+    public int getNoImageRes() {
+        return noImageRes;
+    }
+
+    public void setNoImageRes(@StringRes int noImageRes) {
+        if (noImageRes <= 0)
+            throw new IllegalArgumentException("Invalid value for noImageRes");
+
+        this.noImageRes = noImageRes;
     }
 
 

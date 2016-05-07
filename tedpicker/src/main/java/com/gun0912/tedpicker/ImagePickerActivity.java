@@ -103,9 +103,11 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
 
 
         tv_selected_title = (TextView) findViewById(R.id.tv_selected_title);
+        tv_selected_title.setText(getString(mConfig.getSelectedTitleRes()));
 
         rc_selected_photos = (RecyclerView) findViewById(R.id.rc_selected_photos);
         mSelectedImageEmptyMessage = (TextView) findViewById(R.id.selected_photos_empty);
+        mSelectedImageEmptyMessage.setText(getString(mConfig.getNoImageRes()));
 
         view_selected_photos_container = findViewById(R.id.view_selected_photos_container);
         view_selected_photos_container.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
