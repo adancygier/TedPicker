@@ -154,6 +154,10 @@ Before call `startActivityForResult()`, set your  `Config` instance to `ImagePic
 
 * `setToolbarTitleRes(R.string.xxx) (default: Choice Image / 사진선택)`
 
+* `setSelectedTitleRes(R.string.xxx) (default: Selected Image / 선택한 사진)`
+
+* `setNoImageRes(R.string.xxx) (default: No Image / 이미지가 선택되지 않았습니다)`
+
 * `setTabBackgroundColor(R.color.xxx) (default: #fff)`
 
 * `setTabSelectionIndicatorColor(R.color.xxx) (default: R.attr.colorPrimary)`
