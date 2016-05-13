@@ -176,6 +176,14 @@ Before call `startActivityForResult()`, set your  `Config` instance to `ImagePic
 
 * `setFlashOn(boolean) (default: false)`
 
+* `setGridHorizontalSpacing(R.dimen.xxx)`
+
+* `setGridVerticalSpacing(R.dimen.xxx)`
+
+* `setIsSelectedCheckEnabled(default: false)`
+
+* `setSelectedCloseImage(R.drawable.xxx)`
+
 ##Thanks 
 * This project is based on [Poly-Picker](https://github.com/jaydeepw/poly-picker) library project 
 * [Cwac-Camera](https://github.com/commonsguy/cwac-camera) - Taking Pictures. Made Sensible.
