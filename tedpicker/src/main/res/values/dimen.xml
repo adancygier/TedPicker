@@ -14,6 +14,9 @@
 
     <dimen name="ted_picker_camera_height">250dp</dimen>
 
+    <dimen name="ted_picker_grid_horizontal_spacing">0.5dp</dimen>
+    <dimen name="ted_picker_grid_vertical_spacing">0.5dp</dimen>
+
 
 
 </resources>

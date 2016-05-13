@@ -14,9 +14,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:drawSelectorOnTop="true"
-        android:horizontalSpacing="0.5dp"
+        android:horizontalSpacing="@dimen/ted_picker_grid_horizontal_spacing"
         android:listSelector="?android:attr/selectableItemBackground"
         android:numColumns="3"
-        android:verticalSpacing="0.5dp" />
+        android:verticalSpacing="@dimen/ted_picker_grid_vertical_spacing" />
 
 </FrameLayout>

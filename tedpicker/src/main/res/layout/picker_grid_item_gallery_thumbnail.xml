@@ -9,6 +9,7 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:animateLayoutChanges="true"
+                                                    android:orientation="horizontal"
                                                     android:background="#cccccc"
 
 
@@ -21,6 +22,23 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
 
+        />
+
+    <View
+        android:id="@+id/gradient_view"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/gallery_photo_gradient_selected"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/cbImageView"
+        android:layout_gravity="right"
+        android:layout_margin="4dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/checkbox_circle"
+        android:visibility="gone"
         />
 
 

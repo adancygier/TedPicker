@@ -40,6 +40,8 @@ public class GalleryFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.picker_fragment_gallery, container, false);
         GridView galleryGridView = (GridView) rootView.findViewById(R.id.gallery_grid);
+        galleryGridView.setHorizontalSpacing((int) getResources().getDimension(ImagePickerActivity.getConfig().getGridHorizontalSpacing()));
+        galleryGridView.setVerticalSpacing((int) getResources().getDimension(ImagePickerActivity.getConfig().getGridVerticalSpacing()));
         mActivity = ((ImagePickerActivity) getActivity());
 
 
@@ -125,6 +127,8 @@ public class GalleryFragment extends Fragment {
         CustomSquareFrameLayout root;
 
         ImageView mThumbnail;
+        View mImageGradient;
+        ImageView mCheckBoxImage;
 
         // This is like storing too much data in memory.
         // find a better way to handle this
@@ -133,6 +137,8 @@ public class GalleryFragment extends Fragment {
         public ViewHolder(View view) {
             root = (CustomSquareFrameLayout) view.findViewById(R.id.root);
             mThumbnail = (ImageView) view.findViewById(R.id.thumbnail_image);
+            mCheckBoxImage = (ImageView) view.findViewById(R.id.cbImageView);
+            mImageGradient = view.findViewById(R.id.gradient_view);
         }
 
     }
@@ -165,10 +171,18 @@ public class GalleryFragment extends Fragment {
 
 
             if(holder.root instanceof FrameLayout){
-                ((FrameLayout)holder.root).setForeground(isSelected ? ResourcesCompat.getDrawable(getResources(),R.drawable.gallery_photo_selected,null) : null);
+                if (ImagePickerActivity.getConfig().isSelectedCheckEnabled()) {
+                    if (isSelected) {
+                        holder.mCheckBoxImage.setVisibility(View.VISIBLE);
+                        holder.mImageGradient.setVisibility(View.VISIBLE);
+                    } else {
+                        holder.mCheckBoxImage.setVisibility(View.GONE);
+                        holder.mImageGradient.setVisibility(View.GONE);
+                    }
+                } else {
+                    ((FrameLayout)holder.root).setForeground(isSelected ? ResourcesCompat.getDrawable(getResources(),R.drawable.gallery_photo_selected, null) : null);
+                }
             }
-
-
 
             if (holder.uri == null || !holder.uri.equals(mUri)) {
 
@@ -186,8 +200,6 @@ public class GalleryFragment extends Fragment {
 
                         .into(holder.mThumbnail);
                 holder.uri = mUri;
-
-
             }
 
 

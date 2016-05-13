@@ -36,8 +36,21 @@ public class Config {
 
     private int savedDirectoryName = R.string.default_directory;
 
+    private int gridHorizontalSpacing = R.dimen.ted_picker_grid_horizontal_spacing;
+    private int gridVerticalSpacing = R.dimen.ted_picker_grid_vertical_spacing;
+
+    private boolean isSelectedCheckEnabled = false;
 
     private boolean flashOn = false;
+
+
+    public boolean isSelectedCheckEnabled() {
+        return isSelectedCheckEnabled;
+    }
+
+    public void setIsSelectedCheckEnabled(boolean isSelectedCheckEnabled) {
+       this.isSelectedCheckEnabled = isSelectedCheckEnabled;
+    }
 
     public int getCameraHeight() {
         return cameraHeight;
@@ -59,6 +72,28 @@ public class Config {
             throw new IllegalArgumentException("Invalid value for savedDirectoryName");
 
         this.savedDirectoryName = stringRes;
+    }
+
+    public int getGridHorizontalSpacing() {
+        return gridHorizontalSpacing;
+    }
+
+    public void setGridHorizontalSpacing(int horizontalSpacing) {
+        if (horizontalSpacing <= 0)
+            throw new IllegalArgumentException("Invalid value for horizontalSpacing");
+
+        gridHorizontalSpacing = horizontalSpacing;
+    }
+
+    public int getGridVerticalSpacing() {
+        return gridVerticalSpacing;
+    }
+
+    public void setGridVerticalSpacing(int verticalSpacing) {
+        if (verticalSpacing <= 0)
+            throw new IllegalArgumentException("Invalid value for horizontalSpacing");
+
+        gridVerticalSpacing = verticalSpacing;
     }
 
     public int getSelectedBottomHeight() {

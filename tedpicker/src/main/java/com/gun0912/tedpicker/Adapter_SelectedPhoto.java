@@ -59,6 +59,13 @@ public class Adapter_SelectedPhoto extends BaseRecyclerViewAdapter<Uri, Adapter_
 
         LayoutInflater mInflater = LayoutInflater.from(getContext());
         View view = mInflater.inflate(R.layout.picker_list_item_selected_thumbnail, parent, false);
+
+        if (ImagePickerActivity.getConfig().getSelectedCloseImage() > 0 && ImagePickerActivity.getConfig().getSelectedCloseImage() != R.drawable.ic_clear) {
+            ImageView closeImage = (ImageView) view.findViewById(R.id.iv_close);
+            if (closeImage != null) {
+               closeImage.setImageResource(ImagePickerActivity.getConfig().getSelectedCloseImage());
+            }
+        }
         return new SelectedPhotoHolder(view);
     }
 

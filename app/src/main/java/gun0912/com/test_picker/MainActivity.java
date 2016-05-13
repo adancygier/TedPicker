@@ -63,7 +63,10 @@ public class MainActivity extends AppCompatActivity {
                 config.setSelectionLimit(4);
                 config.setSelectedBottomHeight(R.dimen.bottom_height);
                 config.setFlashOn(true);
-
+                config.setGridHorizontalSpacing(R.dimen.my_picker_grid_horizontal_spacing);
+                config.setGridVerticalSpacing(R.dimen.my_picker_grid_vertical_spacing);
+                config.setIsSelectedCheckEnabled(true);
+                config.setSelectedCloseImage(R.drawable.close_circle);
 
                 getImages(config);
             }

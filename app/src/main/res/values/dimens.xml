@@ -8,4 +8,7 @@
     <dimen name="app_camera_height">150dp</dimen>
 
     <dimen name="bottom_height">150dp</dimen>
+
+    <dimen name="my_picker_grid_horizontal_spacing">4dp</dimen>
+    <dimen name="my_picker_grid_vertical_spacing">4dp</dimen>
 </resources>
