@@ -41,8 +41,18 @@ public class Config {
 
     private boolean isSelectedCheckEnabled = false;
 
+    private boolean isCameraEnabled = true;
+
     private boolean flashOn = false;
 
+
+    public boolean isCameraEnabled() {
+        return isCameraEnabled;
+    }
+
+    public void setCameraEnabled(boolean isEnabled) {
+       isCameraEnabled = isEnabled;
+    }
 
     public boolean isSelectedCheckEnabled() {
         return isSelectedCheckEnabled;

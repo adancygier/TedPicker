@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 config.setGridVerticalSpacing(R.dimen.my_picker_grid_vertical_spacing);
                 config.setIsSelectedCheckEnabled(true);
                 config.setSelectedCloseImage(R.drawable.close_circle);
+                config.setCameraEnabled(false);
 
                 getImages(config);
             }

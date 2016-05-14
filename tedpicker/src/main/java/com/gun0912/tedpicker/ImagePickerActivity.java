@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,6 +58,7 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
     TabLayout tabLayout;
     PagerAdapter_Picker adapter;
     Adapter_SelectedPhoto adapter_selectedPhoto;
+    FrameLayout galleryContainer;
 
     public static Config getConfig() {
         return mConfig;
@@ -84,7 +88,11 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
         setTitle(mConfig.getToolbarTitleRes());
 
 
-        setupTabs();
+        if (mConfig.isCameraEnabled()) {
+            setupTabs();
+        } else {
+            setUpGalleryFragment();
+        }
         setSelectedPhotoRecyclerView();
 
     }
@@ -100,7 +108,6 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
         view_root = findViewById(R.id.view_root);
         mViewPager = (ViewPager) findViewById(R.id.pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-
 
         tv_selected_title = (TextView) findViewById(R.id.tv_selected_title);
         tv_selected_title.setText(getString(mConfig.getSelectedTitleRes()));
@@ -132,6 +139,7 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
             mSelectedImageEmptyMessage.setTextColor(mConfig.getSelectedBottomColor());
         }
 
+        galleryContainer = (FrameLayout) findViewById(R.id.gallery_fragment_container);
 
     }
 
@@ -165,8 +173,10 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
     private void setupTabs() {
         adapter = new PagerAdapter_Picker(this, getSupportFragmentManager());
         mViewPager.setAdapter(adapter);
+        mViewPager.setVisibility(View.VISIBLE);
         tabLayout.setupWithViewPager(mViewPager);
-
+        tabLayout.setVisibility(View.VISIBLE);
+        galleryContainer.setVisibility(View.GONE);
 
         if (mConfig.getTabBackgroundColor() > 0)
             tabLayout.setBackgroundColor(mConfig.getTabBackgroundColor());
@@ -174,6 +184,17 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
         if (mConfig.getTabSelectionIndicatorColor() > 0)
             tabLayout.setSelectedTabIndicatorColor(mConfig.getTabSelectionIndicatorColor());
 
+    }
+
+    private void setUpGalleryFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        GalleryFragment galleryFragment = new GalleryFragment();
+        fragmentTransaction.add(R.id.gallery_fragment_container, galleryFragment);
+        fragmentTransaction.commit();
+        galleryContainer.setVisibility(View.VISIBLE);
+        mViewPager.setVisibility(View.GONE);
+        tabLayout.setVisibility(View.GONE);
     }
 
     private void setSelectedPhotoRecyclerView() {
