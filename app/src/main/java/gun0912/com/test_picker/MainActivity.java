@@ -67,12 +67,35 @@ public class MainActivity extends AppCompatActivity {
                 config.setGridVerticalSpacing(R.dimen.my_picker_grid_vertical_spacing);
                 config.setIsSelectedCheckEnabled(true);
                 config.setSelectedCloseImage(R.drawable.close_circle);
-                config.setCameraEnabled(false);
 
                 getImages(config);
             }
         });
 
+        View getImages3 = findViewById(R.id.get_images3);
+        getImages3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Config config = new Config();
+                config.setCameraHeight(R.dimen.app_camera_height);
+                config.setToolbarTitleRes(R.string.custom_title);
+                config.setSelectedTitleRes(R.string.custom_selected_title);
+                config.setNoImageRes(R.string.custom_no_image);
+                config.setSelectionMin(2);
+                config.setSelectionLimit(4);
+                config.setSelectedBottomHeight(R.dimen.bottom_height);
+                config.setFlashOn(true);
+                config.setGridHorizontalSpacing(R.dimen.my_picker_grid_horizontal_spacing);
+                config.setGridVerticalSpacing(R.dimen.my_picker_grid_vertical_spacing);
+                config.setIsSelectedCheckEnabled(true);
+                config.setSelectedCloseImage(R.drawable.close_circle);
+                config.setCameraEnabled(false);
+
+                getImages(config);
+            }
+        });
 
     }
 

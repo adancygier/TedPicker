@@ -32,6 +32,14 @@
         android:text="Pick images(Custom)"
         android:textColor="#000000"/>
 
+    <Button
+        android:id="@+id/get_images3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:text="Pick images(Custom: No Camera)"
+        android:textColor="#000000"/>
 
 
 
