@@ -233,7 +233,7 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
 
 
         if (mSelectedImages.size() == mConfig.getSelectionLimit()) {
-            String text = String.format(getResources().getString(R.string.max_count_msg), mConfig.getSelectionLimit());
+            String text = String.format(getResources().getString(ImagePickerActivity.getConfig().getMaxSelectedMessage()), mConfig.getSelectionLimit());
             Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
             return;
         }

@@ -8,4 +8,5 @@
     <string name="custom_title">Custom Title</string>
     <string name="custom_selected_title">Selected Images</string>
     <string name="custom_no_image">No Images Selected</string>
+    <string name="custom_max_count_msg">Maximum(%1$d) number of images selected</string>
 </resources>

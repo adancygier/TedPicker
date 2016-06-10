@@ -194,6 +194,8 @@ Before call `startActivityForResult()`, set your  `Config` instance to `ImagePic
 
 * `setLayoutAnimationDisabled(boolean)`
 
+* `setMaxSelectedMessage(default: %1$d images selected already / %1$d개이상 선택하셔야 합니다)`
+
 ##Thanks 
 * This project is based on [Poly-Picker](https://github.com/jaydeepw/poly-picker) library project 
 * [Cwac-Camera](https://github.com/commonsguy/cwac-camera) - Taking Pictures. Made Sensible.

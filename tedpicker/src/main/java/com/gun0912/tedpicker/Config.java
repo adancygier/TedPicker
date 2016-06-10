@@ -50,6 +50,8 @@ public class Config {
     private boolean layoutAnimationDisabled = false;
     private boolean flashOn = false;
 
+    private int maxSelectedMessage = R.string.max_count_msg;
+
 
     public boolean isCameraEnabled() {
         return isCameraEnabled;
@@ -287,6 +289,18 @@ public class Config {
     public boolean isLayoutAnimationDisabled() {
         return layoutAnimationDisabled;
     }
+
+    public int getMaxSelectedMessage() {
+        return maxSelectedMessage;
+    }
+
+    public void setMaxSelectedMessage(@StringRes int stringRes) {
+        if (stringRes <= 0)
+            throw new IllegalArgumentException("Invalid value for maxSelectedMessage");
+
+        this.maxSelectedMessage = stringRes;
+    }
+
 
 
     public boolean isFlashOn(){

@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 config.setCloseImageHeight(R.dimen.my_picker_close_image_height);
                 config.setCloseImageMargin(R.dimen.my_picker_close_image_margin);
                 config.setLayoutAnimationDisabled(true);
+                config.setMaxSelectedMessage(R.string.custom_max_count_msg);
 
                 getImages(config);
             }
