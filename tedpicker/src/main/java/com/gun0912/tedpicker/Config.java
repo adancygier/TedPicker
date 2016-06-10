@@ -43,6 +43,10 @@ public class Config {
 
     private boolean isCameraEnabled = true;
 
+    private int closeImageHeight = R.dimen.ted_picker_close_image_height;
+    private int closeImageWidth = R.dimen.ted_picker_close_image_width;
+    private int closeImageMargin = R.dimen.ted_picker_close_image_margin;
+
     private boolean flashOn = false;
 
 
@@ -243,6 +247,36 @@ public class Config {
         if (drawableRes <= 0) throw new IllegalArgumentException("Invalid value for selectedCloseImage");
 
         this.selectedCloseImage = drawableRes;
+    }
+
+    public int getCloseImageHeight() {
+        return closeImageHeight;
+    }
+
+    public void setCloseImageHeight(@DimenRes int dimenRes) {
+        if (dimenRes <= 0) throw new IllegalArgumentException("Invalid value for closeImageHeight");
+
+        this.closeImageHeight = dimenRes;
+    }
+
+    public int getCloseImageWidth() {
+        return closeImageWidth;
+    }
+
+    public void setCloseImageWidth(@DimenRes int dimenRes) {
+        if (dimenRes <= 0) throw new IllegalArgumentException("Invalid value for closeImageWidth");
+
+        this.closeImageWidth = dimenRes;
+    }
+
+    public int getCloseImageMargin() {
+        return closeImageMargin;
+    }
+
+    public void setCloseImageMargin(@DimenRes int dimenRes) {
+        if (dimenRes <= 0) throw new IllegalArgumentException("Invalid value for closeImageMargin");
+
+        this.closeImageMargin = dimenRes;
     }
 
 

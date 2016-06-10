@@ -213,14 +213,9 @@ public class ImagePickerActivity extends AppCompatActivity implements CameraHost
         adapter_selectedPhoto.updateItems(mSelectedImages);
         rc_selected_photos.setAdapter(adapter_selectedPhoto);
 
-
         if (mSelectedImages.size() >= 1) {
             mSelectedImageEmptyMessage.setVisibility(View.GONE);
         }
-
-
-
-
 
     }
 

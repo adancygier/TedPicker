@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 config.setGridVerticalSpacing(R.dimen.my_picker_grid_vertical_spacing);
                 config.setIsSelectedCheckEnabled(true);
                 config.setSelectedCloseImage(R.drawable.close_circle);
+                config.setCloseImageWidth(R.dimen.my_picker_close_image_width);
+                config.setCloseImageHeight(R.dimen.my_picker_close_image_height);
+                config.setCloseImageMargin(R.dimen.my_picker_close_image_margin);
 
                 getImages(config);
             }
@@ -92,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 config.setIsSelectedCheckEnabled(true);
                 config.setSelectedCloseImage(R.drawable.close_circle);
                 config.setCameraEnabled(false);
+                config.setCloseImageWidth(R.dimen.my_picker_close_image_width);
+                config.setCloseImageHeight(R.dimen.my_picker_close_image_height);
+                config.setCloseImageMargin(R.dimen.my_picker_close_image_margin);
 
                 getImages(config);
             }

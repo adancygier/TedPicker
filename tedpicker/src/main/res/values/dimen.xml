@@ -17,6 +17,9 @@
     <dimen name="ted_picker_grid_horizontal_spacing">0.5dp</dimen>
     <dimen name="ted_picker_grid_vertical_spacing">0.5dp</dimen>
 
+    <dimen name="ted_picker_close_image_height">25dp</dimen>
+    <dimen name="ted_picker_close_image_width">25dp</dimen>
+    <dimen name="ted_picker_close_image_margin">2dp</dimen>
 
 
 </resources>

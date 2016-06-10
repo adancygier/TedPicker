@@ -2,9 +2,11 @@ package com.gun0912.tedpicker;
 
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -32,10 +34,7 @@ public class Adapter_SelectedPhoto extends BaseRecyclerViewAdapter<Uri, Adapter_
 
     @Override
     public void onBindView(SelectedPhotoHolder holder, int position) {
-
         Uri uri = getItem(position);
-
-
 
         Glide.with(imagePickerActivity)
                 .load(uri.toString())
@@ -45,13 +44,7 @@ public class Adapter_SelectedPhoto extends BaseRecyclerViewAdapter<Uri, Adapter_
                 .error(R.drawable.no_image)
                 .into(holder.selected_photo);
 
-
-
-
         holder.iv_close.setTag(uri);
-
-
-
     }
 
     @Override
@@ -63,15 +56,19 @@ public class Adapter_SelectedPhoto extends BaseRecyclerViewAdapter<Uri, Adapter_
         if (ImagePickerActivity.getConfig().getSelectedCloseImage() > 0 && ImagePickerActivity.getConfig().getSelectedCloseImage() != R.drawable.ic_clear) {
             ImageView closeImage = (ImageView) view.findViewById(R.id.iv_close);
             if (closeImage != null) {
-               closeImage.setImageResource(ImagePickerActivity.getConfig().getSelectedCloseImage());
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(closeImage.getLayoutParams());
+                layoutParams.height = (int) getContext().getResources().getDimension(ImagePickerActivity.getConfig().getCloseImageHeight());
+                layoutParams.width = (int) getContext().getResources().getDimension(ImagePickerActivity.getConfig().getCloseImageWidth());
+                int margin = (int) getContext().getResources().getDimension(ImagePickerActivity.getConfig().getCloseImageMargin());
+                layoutParams.setMargins(margin, margin, margin, margin);
+                layoutParams.gravity = Gravity.RIGHT;
+                closeImage.setAdjustViewBounds(true);
+                closeImage.setImageResource(ImagePickerActivity.getConfig().getSelectedCloseImage());
+                closeImage.setLayoutParams(layoutParams);
             }
         }
         return new SelectedPhotoHolder(view);
     }
-
-
-
-
 
     class SelectedPhotoHolder extends RecyclerView.ViewHolder {
 

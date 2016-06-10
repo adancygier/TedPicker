@@ -11,4 +11,8 @@
 
     <dimen name="my_picker_grid_horizontal_spacing">4dp</dimen>
     <dimen name="my_picker_grid_vertical_spacing">4dp</dimen>
+
+    <dimen name="my_picker_close_image_height">20dp</dimen>
+    <dimen name="my_picker_close_image_width">20dp</dimen>
+    <dimen name="my_picker_close_image_margin">4dp</dimen>
 </resources>
