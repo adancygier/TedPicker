@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 config.setCloseImageWidth(R.dimen.my_picker_close_image_width);
                 config.setCloseImageHeight(R.dimen.my_picker_close_image_height);
                 config.setCloseImageMargin(R.dimen.my_picker_close_image_margin);
+                config.setLayoutAnimationDisabled(true);
 
                 getImages(config);
             }

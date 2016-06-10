@@ -192,6 +192,8 @@ Before call `startActivityForResult()`, set your  `Config` instance to `ImagePic
 
 * `setCloseImageMargin(R.dimen.xxx)`
 
+* `setLayoutAnimationDisabled(boolean)`
+
 ##Thanks 
 * This project is based on [Poly-Picker](https://github.com/jaydeepw/poly-picker) library project 
 * [Cwac-Camera](https://github.com/commonsguy/cwac-camera) - Taking Pictures. Made Sensible.

@@ -47,6 +47,7 @@ public class Config {
     private int closeImageWidth = R.dimen.ted_picker_close_image_width;
     private int closeImageMargin = R.dimen.ted_picker_close_image_margin;
 
+    private boolean layoutAnimationDisabled = false;
     private boolean flashOn = false;
 
 
@@ -277,6 +278,14 @@ public class Config {
         if (dimenRes <= 0) throw new IllegalArgumentException("Invalid value for closeImageMargin");
 
         this.closeImageMargin = dimenRes;
+    }
+
+    public void setLayoutAnimationDisabled(boolean value) {
+        layoutAnimationDisabled = value;
+    }
+
+    public boolean isLayoutAnimationDisabled() {
+        return layoutAnimationDisabled;
     }
 
 

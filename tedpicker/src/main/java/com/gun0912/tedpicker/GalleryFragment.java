@@ -136,6 +136,9 @@ public class GalleryFragment extends Fragment {
 
         public ViewHolder(View view) {
             root = (CustomSquareFrameLayout) view.findViewById(R.id.root);
+            if (ImagePickerActivity.getConfig().isLayoutAnimationDisabled()) {
+                root.setLayoutTransition(null);
+            }
             mThumbnail = (ImageView) view.findViewById(R.id.thumbnail_image);
             mCheckBoxImage = (ImageView) view.findViewById(R.id.cbImageView);
             mImageGradient = view.findViewById(R.id.gradient_view);
