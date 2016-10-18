@@ -31,9 +31,7 @@ import java.util.List;
  * Created by Gil on 04/03/2014.
  */
 public class GalleryFragment extends Fragment {
-
     public static ImageGalleryAdapter mGalleryAdapter;
-    public static ImagePickerActivity mActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,9 +40,6 @@ public class GalleryFragment extends Fragment {
         GridView galleryGridView = (GridView) rootView.findViewById(R.id.gallery_grid);
         galleryGridView.setHorizontalSpacing((int) getResources().getDimension(ImagePickerActivity.getConfig().getGridHorizontalSpacing()));
         galleryGridView.setVerticalSpacing((int) getResources().getDimension(ImagePickerActivity.getConfig().getGridVerticalSpacing()));
-        mActivity = ((ImagePickerActivity) getActivity());
-
-
         List<Uri> images = getImagesFromGallary(getActivity());
         mGalleryAdapter = new ImageGalleryAdapter(getActivity(), images);
 
@@ -57,10 +52,10 @@ public class GalleryFragment extends Fragment {
                 Uri mUri = mGalleryAdapter.getItem(i);
 
 
-                if (!mActivity.containsImage(mUri)) {
-                    mActivity.addImage(mUri);
+                if (!getImagePickerActivity().containsImage(mUri)) {
+                    getImagePickerActivity().addImage(mUri);
                 } else {
-                    mActivity.removeImage(mUri);
+                    getImagePickerActivity().removeImage(mUri);
 
                 }
 
@@ -170,7 +165,7 @@ public class GalleryFragment extends Fragment {
 
 
             final Uri mUri = getItem(position);
-            boolean isSelected = mActivity.containsImage(mUri);
+            boolean isSelected = getImagePickerActivity().containsImage(mUri);
 
 
             if(holder.root instanceof FrameLayout){
@@ -208,5 +203,9 @@ public class GalleryFragment extends Fragment {
 
             return convertView;
         }
+    }
+
+    public ImagePickerActivity getImagePickerActivity() {
+        return ((ImagePickerActivity) getActivity());
     }
 }
